@@ -13,16 +13,16 @@ if (content.length > 250) {
     desc.innerHTML = content;
 }   
 
-const ratings = document.querySelectorAll(".rating-display .value");
+// const ratings = document.querySelectorAll(".rating-display .value");
 
-for (let rating of ratings) {
-    let ratingValue = parseFloat(rating.innerText);
+// for (let rating of ratings) {
+//     let ratingValue = parseFloat(rating.innerText);
 
-if (ratingValue > 4.7) {
-    rating.classList.add("high-rating")
-    rating.classList.remove("value")
-    }
-}
+// if (ratingValue > 4.7) {
+//     rating.classList.add("high-rating")
+//     rating.classList.remove("value")
+//     }
+// }
 
 // const parks = document.querySelectorAll(".park-display");
 
@@ -84,17 +84,21 @@ const favoriteButtonClickHandler = (event) => {
         // 4. sort the array
         parksArray.sort(sortByName);
         // 5. insert each park into the dom
-    parks.Array.forEach((park) => {
+    parksArray.forEach((park) => {
         main.appendChild(park);
     });
 };
 
 // function to sort by rating
-    const sortByRating = (parkA, parkB) => {
-        const parkARating = parseFloat(parkA.querySelector(".rating-display > .value").innerText);
-        const parkBRating = parseFloat(parkB.querySelector(".rating-display > .value").innerText);
-        return parkBRating - parkARating;
-    };
+const sortByRating = (parkA, parkB) => {
+    const parkARating = 
+      parkA.querySelector(".rating-display > .value").innerText
+    ;
+    const parkBRating = 
+      parkB.querySelector(".rating-display > .value").innerText
+    ;
+    return parkBRating - parkARating;
+  };
 
     const ratingSorterClickerHandler = (event) => {
         event.preventDefault();
